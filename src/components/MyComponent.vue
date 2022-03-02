@@ -1,3 +1,8 @@
+<template>
+  <h1 :style="{color: test}">{{message}}</h1>
+  <button @click="changeColor">color: {{test}}</button>
+</template>
+
 <script setup>
 
 defineProps({
@@ -24,8 +29,3 @@ defineProps({
     }
   }
 </script>
-
-<template>
-  <h1 :style="{color: test}">{{message}}</h1>
-  <button @click="changeColor">color: {{test}}</button>
-</template>
