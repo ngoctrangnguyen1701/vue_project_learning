@@ -7,6 +7,8 @@
   <hr/>
   <style-for-component/>
   <!-- Vue nó tự complie các cách đặt tên của component -->
+  <hr/>
+  <Property/>
 </template>
 
 <script setup>
@@ -16,7 +18,7 @@
   // reference: https://viblo.asia/p/tim-hieu-ve-composition-trong-vuejs-bWrZnVQOZxw
   //nếu khai báo component từ bên ngoài vào trong script setup
   //thì không cần phải viết thêm cái property 'components' trong export default
-
+  import Property from './components/Props(property)/Property.vue'
 </script>
 
 
@@ -35,6 +37,10 @@
 
 <style>
   @import './assets/base.css';
+  body{
+    margin-left: 15px;
+    color: white;
+  }
   h1{
     color: white;
   }

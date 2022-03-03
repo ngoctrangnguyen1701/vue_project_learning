@@ -1,5 +1,5 @@
 <template>
-  <h1 style="text-align: center; margin-top: 50px0">Style for component</h1>
+  <h1 style="text-align: center; margin-top: 50px 0">Style for component</h1>
   <div class="d-flex">
     <Square1/>
     <Square2/>
