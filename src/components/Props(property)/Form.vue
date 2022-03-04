@@ -1,28 +1,28 @@
 <template>
   <form style="flex-grow: 1; margin-left: 15px">
-    <input type="text" placeholder="name" @input="changeName">
-    <ShowName :name="name"/>
+    <label>Speed up</label>
+    <select @change="changeValue">
+      <option value="3s">1x</option>
+      <option value="1.5s">2x</option>
+      <option value="0.5s">3x</option>
+    </select>
   </form>
 </template>
 
 <script>
-import ShowName from './ShowName.vue'
-
 export default {
   data() {
     return {
-      name: ''
+      speed: 0
     }
   },
   methods: {
-    changeName(e){
-      console.log(e);
+    changeValue(e){
       console.log(e.target.value);
-      this.name = e.target.value;
+      this.speed = e.target.value;
+      this.$emit('changeSpeed', this.speed) 
+      //phát ra sự kiện 'changeSpeed' kèm với tham số là 'this.speed'
     }
   },
-  components: {
-    ShowName,
-  }
 }
 </script>

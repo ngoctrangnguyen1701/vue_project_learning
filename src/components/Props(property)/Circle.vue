@@ -1,10 +1,23 @@
 <template>
-  <div :class="isTurn ? 'circle run-turn' : 'circle run-turn stop' "></div>
+  <div
+    :class="isTurn ? 'circle run-turn' : 'circle run-turn stop'"
+    :style="speed ? `animation-duration: ${speed}` : ''"
+  ></div>
 </template>
 
 <script>
 export default {
-  props: ['isTurn'],
+  // props: ['isTurn'],
+  props: {
+    isTurn: {
+      type: Boolean, //--> giá trị prop 'isTurn' nhận được phải là Boolean
+      required: true, //--> bắt buộc phải có prop này nếu không Vue sẽ báo lỗi
+    },
+    speed: {
+      type: String,
+      default: '1s' //nếu không truyền vào cái gì hết , nó sẽ lấy mặc định là '1s'
+    }
+  }
 }
 </script>
 
