@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     runClock(){
-      setInterval(() => {
+      a = setInterval(() => {
         const now = new Date();
         const hours = now.getHours() < 10 ? `0${now.getHours()}` : `${now.getHours()}`
         const minutes = now.getMinutes() < 10 ? `0${now.getMinutes()}` : `${now.getMinutes()}`

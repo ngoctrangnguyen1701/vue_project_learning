@@ -9,6 +9,11 @@
   <!-- Vue nó tự complie các cách đặt tên của component -->
   <hr/>
   <Property/>
+  <hr/>
+  <Slot/>
+  <hr/>
+  <ToggleComponents/>
+
 </template>
 
 <script setup>
@@ -19,7 +24,9 @@
   //nếu khai báo component từ bên ngoài vào trong script setup
   //thì không cần phải viết thêm cái property 'components' trong export default
   import Property from './components/Props(property)/Property.vue'
-</script>
+  import Slot from './components/Slot/Slot.vue'
+  import ToggleComponents from './components/ToggleComponents/ToggleComponents.vue'
+</script> 
 
 
 <script>
@@ -38,7 +45,7 @@
 <style>
   @import './assets/base.css';
   body{
-    margin-left: 15px;
+    margin: 15px;
     color: white;
   }
   h1{
