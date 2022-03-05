@@ -17,8 +17,6 @@
 <script>
   import Circle from './Circle.vue'
   import Form from './Form.vue'
-  import Clock from './Clock.vue'
-  import ControlsClock from './ControlsClock.vue'
 
   export default ({
     data(){
@@ -35,8 +33,6 @@
     components: {
       Circle,
       Form,
-      Clock,
-      ControlsClock,
     },
   })
 </script>

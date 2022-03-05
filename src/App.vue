@@ -10,6 +10,8 @@
   <hr/>
   <Property/>
   <hr/>
+  <EventBus/>
+  <hr/>
   <Slot/>
   <hr/>
   <ToggleComponents/>
@@ -24,6 +26,7 @@
   //nếu khai báo component từ bên ngoài vào trong script setup
   //thì không cần phải viết thêm cái property 'components' trong export default
   import Property from './components/Props(property)/Property.vue'
+  import EventBus from './components/EventBus/EventBus.vue'
   import Slot from './components/Slot/Slot.vue'
   import ToggleComponents from './components/ToggleComponents/ToggleComponents.vue'
 </script> 
@@ -32,11 +35,11 @@
 <script>
   // import MyComponent from './components/MyComponent.vue'
 
-  // export default {
+  export default {
   //   components: {
   //     'MyComponent': MyComponent
   //   }
-  // }
+  }
 </script>
 
 
@@ -50,5 +53,8 @@
   }
   h1{
     color: white;
+  }
+  hr{
+    margin-top: 15px;
   }
 </style>
