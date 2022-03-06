@@ -15,16 +15,19 @@
       @click="addText()"
       v-else
     >Add</button>
+    <Message :message="message"/>
   </div>
   <TextLayout
     :textList="textList"
     @deleteItem="deleteItem($event)"
     @editItem="editItem($event)"
+    @isPrepareMoveItem="message = $event ? 'Hold and drag to move item' : ''"
   />
 </template>
 
 <script>
   import TextLayout from './TextLayout.vue'
+  import Message from './Message.vue'
 
   export default {
     data() {
@@ -33,15 +36,19 @@
         textList: JSON.parse(localStorage.getItem('itemList')) || [],
         isEditing: false,
         indexEditing: '',
+
+        message: '',
+        // isPrepareMoveItem: false,
       }
     },
     components: {
       TextLayout,
+      Message,
     },
     watch: {
       textList(newValue, oldValue) {
-        console.log({newValue})
-        console.log({oldValue})
+        // console.log({newValue})
+        // console.log({oldValue})
         //save in localStorage
         localStorage.setItem('itemList', JSON.stringify(this.textList))
       },

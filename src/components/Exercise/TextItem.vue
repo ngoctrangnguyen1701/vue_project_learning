@@ -1,5 +1,9 @@
+
 <template>
-  <div class="box-text">
+  <div 
+    class="box-text"
+    draggable="true"
+  >
     <span>{{text}}</span>
     <div
       class="delete"
@@ -13,14 +17,23 @@
 </template>
 
 <script>
+// @mousedown="$emit('isPrepareMoveItem', true)"
+//     @mouseup="$emit('isPrepareMoveItem', false)"
   export default {
     props: {
       text: {
         type: String,
         required: true,
+      },
+    },
+    methods: {
+      handleDragStart(e) {
+        console.log(handleDragStart);
+        // e.dataTransfer.setData("Text", event.target.id)
       }
     } 
   }
+  //https://learnvue.co/2020/01/how-to-add-drag-and-drop-to-your-vuejs-project/#setting-up-our-project
 </script>
 
 <style scoped>
@@ -29,6 +42,7 @@
     border-radius: 5px;
     padding: 5px 10px;
 
+    cursor: all-scroll;
     position: relative;
 
     transition: .3s;
