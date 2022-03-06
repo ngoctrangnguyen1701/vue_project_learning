@@ -18,7 +18,8 @@ import Exercise from './components/Exercise/Exercise.vue'
 export default {
   data() {
     return {
-      renderComponent: 'Lession'
+      // renderComponent: 'Lession'
+      renderComponent: 'Exercise'
     }
   },
   components: {
