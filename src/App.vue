@@ -1,52 +1,37 @@
 <template>
-  <MyComponent message="Hello Vietnam"/>
-  <MyComponent message="Xin chao Viet Nam"/>
-  <MyComponent message="My Component"/>
-  <contract-component/>
-  <!-- vì đã tạo global component là <contract-component>  nên có thể sử dụng trong bất cứ template(component) nào mà không cần import  -->
-  <hr/>
-  <style-for-component/>
-  <!-- Vue nó tự complie các cách đặt tên của component -->
-  <hr/>
-  <Property/>
-  <hr/>
-  <EventBus/>
-  <hr/>
-  <Slot/>
-  <hr/>
-  <ToggleComponents/>
+  <div class="group-btn">
+    <button
+      class="btn btn-danger"
+      @click="renderComponent = 'Lession'">Lession</button>
+    <button
+      class="btn btn-outline-danger ms-1"
+      @click="renderComponent = 'Exercise'">Exercise</button>
+  </div>
 
+  <component :is="renderComponent"></component>
 </template>
 
-<script setup>
-  import MyComponent from './components/MyComponent.vue'
-  import StyleForComponent from './components/StyleForComponent/StyleForComponent.vue'
-  // Bởi vì setup thực thi trước component được tạo, trong setup sẽ không có this
-  // reference: https://viblo.asia/p/tim-hieu-ve-composition-trong-vuejs-bWrZnVQOZxw
-  //nếu khai báo component từ bên ngoài vào trong script setup
-  //thì không cần phải viết thêm cái property 'components' trong export default
-  import Property from './components/Props(property)/Property.vue'
-  import EventBus from './components/EventBus/EventBus.vue'
-  import Slot from './components/Slot/Slot.vue'
-  import ToggleComponents from './components/ToggleComponents/ToggleComponents.vue'
-</script> 
-
-
 <script>
-  // import MyComponent from './components/MyComponent.vue'
+import Lession from './components/Lession/Lession.vue'
+import Exercise from './components/Exercise/Exercise.vue'
 
-  export default {
-  //   components: {
-  //     'MyComponent': MyComponent
-  //   }
+export default {
+  data() {
+    return {
+      renderComponent: 'Lession'
+    }
+  },
+  components: {
+    Lession,
+    Exercise,
   }
+}
 </script>
-
-
-
 
 <style>
   @import './assets/base.css';
+  @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+  
   body{
     margin: 15px;
     color: white;
@@ -56,5 +41,13 @@
   }
   hr{
     margin-top: 15px;
+  }
+  .group-btn{
+    display: flex;
+    justify-content: center;
+  }
+  .group-btn .btn{
+    display: block;
+    font-size: 20px;
   }
 </style>

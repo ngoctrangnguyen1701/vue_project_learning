@@ -7,10 +7,6 @@
     phải bind thuộc tính đó lại (v-bind:ten_thuoc_tinh)-->
     <Form @changeSpeed="speed = $event"/>
     <!-- lấy tham số sự kiện 'changeSpeed' gán cho speed-->
-    <div style="width: 100%; margin-top: 15px; display: flex; align-items: center">
-      <Clock/>
-      <ControlsClock/>
-    </div>
   </div>
 </template>
 

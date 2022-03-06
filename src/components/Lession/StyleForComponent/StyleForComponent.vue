@@ -22,7 +22,7 @@
 </script>
 
 
-<style>
+<style scoped>
   div.d-flex{
     display: flex;
     justify-content: center;

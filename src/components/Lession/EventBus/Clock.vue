@@ -41,6 +41,12 @@ export default {
       this.playClock()
     })
   },
+  unmounted(){
+    this.eventBus.off('stopClock')
+    this.eventBus.off('playClock')
+    //tắt sự kiện lắng nghe khi component unmounted (trong vue2 là detroyed)
+    //nếu không mỗi lần component này render ra DOM đều tạo 1 cục lắng nghe mới (tương tự khi sử dụng React cũng vậy)
+  }
 }
 </script>
 

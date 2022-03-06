@@ -1,7 +1,7 @@
 import {createApp} from 'vue'
 import mitt from 'mitt'
 import App from './App.vue'
-import Contract from './components/Contract.vue'
+import Contract from './components/Lession/Contract.vue'
 
 export const eventBus = mitt()
 
