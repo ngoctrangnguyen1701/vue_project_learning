@@ -21,20 +21,12 @@
     :textList="textList"
     @deleteItem="deleteItem($event)"
     @editItem="editItem($event)"
-    @isWannaMoveItem="message = $event ? 'Press left mouse to prepare to move item' : ''"
-    @changedList="textList = [...$event]"
-    @isPrepareMoveItem="message = $event ? 'Hold and drag mouse to move item to new position' : ''"
+    @isWannaMoveItem="message = $event ? 'Hold and drag mouse to move item to new position' : ''"
+    @changedList="changedList($event)"
   />
 </template>
 
 <script>
-//CHỈNH SỬA LẠI DÒNG @changedList="textList = [...$event]"
-    // @changePosition="changePosition($event)"
-
-// @dragenter.prevent
-// @dragover.prevent
-//2 lệnh này dùng để chặn default, cái không cho phép element được kéo thả
-//reference: https://www.youtube.com/watch?v=-kZLD40d-tI
   import TextLayout from './TextLayout.vue'
   import Message from './Message.vue'
 
@@ -47,7 +39,6 @@
         indexEditing: '',
 
         message: '',
-        // isPrepareMoveItem: false,
       }
     },
     components: {
@@ -81,6 +72,7 @@
         this.textList = newArr
       },
       editItem(index) {
+        console.log('editItem: ', index)
         this.textTyping = this.textList[index]
         this.isEditing = true
         this.indexEditing = index
@@ -104,6 +96,17 @@
         newArr[dragIndex] = dropItem
         newArr[dropIndex] = dragItem
         this.textList = newArr
+      },
+      changedList(value) {
+        console.log(value)
+        // this.textList = [...value]
+        //gán lại biến 'textList' như thế này sẽ bị lỗi hiển thị không đúng thứ tự kéo, 
+        //chắc do xung đột giữa xài thư viện sortablejs với phần render textList của Vue
+        //danh sách mà thư viện sortablejs thay đổi có thể chỉ thay đổi cái THUỘC TÍNH 'ORDER' trong css, chứ không thay đổi index của item
+        //nên để cái thư viện sortablejs hiển thị đúng thứ tự kéo khi bấm F5, lưu danh sách thay đổi trực tiếp vào localStorage
+        //KHÔNG clone ra và gán vào thằng 'textList' để thằng watch theo dõi tự update vào localStorage
+        //trên thực tế cái 'textList' xem qua Vue dev tool vẫn là danh sách trước khi thay đổi
+        localStorage.setItem('itemList', JSON.stringify(value))
       }
     }
   }
