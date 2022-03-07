@@ -1,10 +1,13 @@
-
 <template>
   <div 
     class="box-text"
     draggable="true"
+    @mouseenter="$emit('isWannaMoveItem', true)"
+    @mouseout="$emit('isWannaMoveItem', false)"
+    @mousedown="$emit('isPrepareMoveItem', true)"
+    @mouseup="$emit('isPrepareMoveItem', false)"
   >
-    <span>{{text}}</span>
+    <span class="text-content">{{text}}</span>
     <div
       class="delete"
       @click="$emit('deleteItem')"
@@ -17,19 +20,36 @@
 </template>
 
 <script>
-// @mousedown="$emit('isPrepareMoveItem', true)"
-//     @mouseup="$emit('isPrepareMoveItem', false)"
+    // @dragstart="handleDragStart($event, index, text)"
+    // @drop="handleDrop($event, index, text)"
   export default {
     props: {
       text: {
         type: String,
         required: true,
       },
+      index: {
+        type: Number,
+        required: true,
+      }
     },
     methods: {
-      handleDragStart(e) {
-        console.log(handleDragStart);
-        // e.dataTransfer.setData("Text", event.target.id)
+      handleDragStart(event, dragIndex, dragItem) {
+        // console.log(event)
+        console.log(dragIndex);
+        // event.dataTransfer.dropEffect = 'move'
+        // event.dataTransfer.effectAllowed = 'move' //hiệu ứng này để thông báo là sẽ move thay vì copy
+        event.dataTransfer.setData('dragIndex', dragIndex)
+        event.dataTransfer.setData('dragItem', dragItem)
+      },
+      handleDrop(event, dropIndex, dropItem) {
+        // console.log(event)
+        console.log({dropIndex, dropItem})
+        //thay đổi vị trí giữa item drap với vị trí item drop
+        const dragIndex = parseInt(event.dataTransfer.getData('dragIndex'))
+        const dragItem = event.dataTransfer.getData('dragItem')
+        console.log({dragIndex, dragItem})
+        this.$emit('changePosition', {dragIndex, dragItem, dropIndex, dropItem})
       }
     } 
   }
