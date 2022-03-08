@@ -1,9 +1,11 @@
 <template>
-  <form class="col-12 col-lg-6 mt-3">
-    <div class="mt-3">
+  <form class="col-12 col-lg-6">
+    <div>
       <label>Name</label>
       <!-- <input type="text" class="form-control" v-model="formValues.name"> -->
-      <input type="text" class="form-control" @input="e => updateValue({name: e.target.value})">
+      <!-- <input type="text" class="form-control" @input="e => updateValue({name: e.target.value})"> -->
+      <!-- cách ghi nào cũng lấy được giá tri của ô input -->
+      <input type="text" class="form-control" @input="updateValue({name: $event.target.value})">
     </div>
     <div class="mt-3">
       <label>Email</label>
