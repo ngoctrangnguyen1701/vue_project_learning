@@ -1,0 +1,27 @@
+.box {
+  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: white;
+
+  color: black;
+}
+
+.header {
+  background-color: blue;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+
+  color: white;
+  font-size: 20px;
+}
+
+.content {
+  padding: 10px;
+}
+
+.content-item label {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
