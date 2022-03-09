@@ -40,6 +40,10 @@ export default {
           name: 'Derective',
           renderComponent: 'Derective',
         },
+        {
+          name: 'Mixin',
+          renderComponent: 'Mixin',
+        },
       ]
     }
   },

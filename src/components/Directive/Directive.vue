@@ -21,12 +21,12 @@ export default {
       console.log(el);
       console.log(binding);
       console.log(vnode);
-      // el.innnerText = 'test custom directive local'
+
+      // el.innnerText = 'test custom directive local' //--> cái này nó không chạy
       el.style.backgroundColor = 'yellow'
       el.style.color = 'black'
       vnode.el.innerText = 'test custom directive local'
     }
-  }
+  },
 }
 </script>
-
