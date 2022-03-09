@@ -13,7 +13,7 @@ import Derective from './components/Directive/Directive.vue'
 export default {
   data() {
     return {
-      renderComponent: 'HandlingForm'
+      renderComponent: 'Derective'
     }
   },
   components: {
