@@ -10,6 +10,8 @@
 </template>
 
 <script>
+//kết hợp giữa emit với v-model để lấy dữ liệu từ ô input trong component con
+// https://vuejs.org/guide/components/events.html
 export default {
   props: {
     test: String

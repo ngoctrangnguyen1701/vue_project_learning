@@ -1,37 +1,14 @@
 <template>
-  <div class="d-flex">
-    <div class="btn-group mx-auto">
-      <button
-        class="btn btn-danger"
-        :class="renderComponent === 'Lession' && 'btn-active'"
-        @click="renderComponent = 'Lession'"
-      >
-        Lession
-      </button>
-      <button
-        class="btn btn-outline-danger mx-2"
-        :class="renderComponent === 'Exercise' && 'btn-active'"
-        @click="renderComponent = 'Exercise'"
-      >
-        Exercise
-      </button>
-      <button
-        class="btn btn-danger"
-        :class="renderComponent === 'HandlingForm' && 'btn-active'"
-        @click="renderComponent = 'HandlingForm'"
-      >
-        Handling Form
-      </button>
-    </div>
-  </div>
-
+  <HeaderBtn v-model:renderComponent="renderComponent"/>
   <component :is="renderComponent"></component>
 </template>
 
 <script>
+import HeaderBtn from './HeaderBtn.vue'
 import Lession from './components/Lession/Lession.vue'
 import Exercise from './components/Exercise/Exercise.vue'
 import HandlingForm from './components/HandlingForm/HandlingForm.vue'
+import Derective from './components/Directive/Directive.vue'
 
 export default {
   data() {
@@ -40,9 +17,11 @@ export default {
     }
   },
   components: {
+    HeaderBtn,
     Lession,
     Exercise,
     HandlingForm,
+    Derective,
   }
 }
 </script>
@@ -60,14 +39,5 @@ export default {
   }
   hr {
     margin-top: 15px;
-  }
-  .btn-group .btn {
-    display: block;
-    font-size: 20px;
-  }
-  .btn-active {
-    background: chartreuse;
-    border: 1px solid chartreuse;
-    color: black;
   }
 </style>
