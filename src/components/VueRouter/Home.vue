@@ -1,3 +1,3 @@
 <template>
-  Vue router home
+  <h3>Vue router home</h3>
 </template>
