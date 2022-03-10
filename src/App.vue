@@ -10,11 +10,12 @@ import Exercise from './components/Exercise/Exercise.vue'
 import HandlingForm from './components/HandlingForm/HandlingForm.vue'
 import Derective from './components/Directive/Directive.vue'
 import Mixin from './components/Mixin/Mixin.vue'
+import Transition from './components/Transition/Transition.vue'
 
 export default {
   data() {
     return {
-      renderComponent: 'Mixin'
+      renderComponent: 'Transition'
     }
   },
   components: {
@@ -24,6 +25,7 @@ export default {
     HandlingForm,
     Derective,
     Mixin,
+    Transition,
   }
 }
 </script>

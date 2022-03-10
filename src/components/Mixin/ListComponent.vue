@@ -14,18 +14,24 @@
 </template>
 
 <script>
+import productMixin from './productMixin'
+
 export default {
-  data() {
-    return {
-      itemList: ['Samsung', 'Apple', 'Nokia', 'Asus', 'Oppo', 'Xiaomi'],
-      filterValue: ''
-    }
-  },
-  computed: {
-    //gía trị của biến 'itemList' không bị thay đổi
-    filterProduct() {
-      return this.itemList.filter(item => item.toLowerCase().includes(this.filterValue.toLowerCase()))
-    }
+  mixins: [productMixin],
+  // data() {
+  //   return {
+  //     itemList: ['Samsung', 'Apple', 'Nokia', 'Asus', 'Oppo', 'Xiaomi'],
+  //     filterValue: ''
+  //   }
+  // },
+  // computed: {
+  //   //gía trị của biến 'itemList' không bị thay đổi
+  //   filterProduct() {
+  //     return this.itemList.filter(item => item.toLowerCase().includes(this.filterValue.toLowerCase()))
+  //   }
+  // }
+  created() {
+    console.log('created by List Component');
   }
 }
 </script>

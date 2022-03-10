@@ -44,6 +44,10 @@ export default {
           name: 'Mixin',
           renderComponent: 'Mixin',
         },
+        {
+          name: 'Transition',
+          renderComponent: 'Transition',
+        },
       ]
     }
   },
