@@ -11,11 +11,13 @@ import HandlingForm from './components/HandlingForm/HandlingForm.vue'
 import Derective from './components/Directive/Directive.vue'
 import Mixin from './components/Mixin/Mixin.vue'
 import Transition from './components/Transition/Transition.vue'
+import VueResource from './components/VueResource/VueResource.vue'
+import VueRouter from './components/VueRouter/VueRouter.vue'
 
 export default {
   data() {
     return {
-      renderComponent: 'Transition'
+      renderComponent: 'VueRouter'
     }
   },
   components: {
@@ -26,6 +28,8 @@ export default {
     Derective,
     Mixin,
     Transition,
+    VueResource,
+    VueRouter,
   }
 }
 </script>

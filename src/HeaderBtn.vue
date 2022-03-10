@@ -48,6 +48,14 @@ export default {
           name: 'Transition',
           renderComponent: 'Transition',
         },
+        {
+          name: 'Vue-resource',
+          renderComponent: 'VueResource',
+        },
+        {
+          name: 'Vue-router',
+          renderComponent: 'VueRouter',
+        },
       ]
     }
   },

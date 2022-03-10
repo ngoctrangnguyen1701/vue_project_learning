@@ -1,9 +1,19 @@
 import {createApp} from 'vue'
 import mitt from 'mitt'
+import * as VueRouter from 'vue-router'
+
 import App from './App.vue'
 import Contract from './components/Lession/Contract.vue'
+import routes from './routes'
 
 export const eventBus = mitt()
+
+// Tạo router
+//reference: https://router.vuejs.org/guide/#javascript
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHashHistory(),
+  routes,
+})
 
 const app = createApp(App)
 app.config.globalProperties.eventBus = eventBus
@@ -50,6 +60,8 @@ app.directive('customBtn', (el, binding) => {
     }
   }
 })
+
+app.use(router)
 
 app.mount('#app')
 // app.component('contract-component', Contract)
