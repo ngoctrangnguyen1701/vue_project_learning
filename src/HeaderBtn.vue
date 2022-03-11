@@ -1,7 +1,9 @@
 <template>
   <div class="d-flex">
     <div class="btn-group mx-auto flex-wrap">
-      <button
+      <router-link
+        to='/'
+        tag="button"
         v-for="(item, index) in buttonList"
         :key="index"
         class="btn me-2 mt-2"
@@ -9,7 +11,7 @@
         @click="$emit('update:renderComponent', item.renderComponent)"
       >
         {{item.name}}
-      </button>
+      </router-link>
     </div>
   </div>
 
@@ -55,6 +57,10 @@ export default {
         {
           name: 'Vue-router',
           renderComponent: 'VueRouter',
+        },
+        {
+          name: 'Vuex (state global)',
+          renderComponent: 'Vuex',
         },
       ]
     }

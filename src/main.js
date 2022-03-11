@@ -5,6 +5,7 @@ import * as VueRouter from 'vue-router'
 import App from './App.vue'
 import Contract from './components/Lession/Contract.vue'
 import routes from './routes'
+import store from './store'
 
 export const eventBus = mitt()
 
@@ -62,6 +63,7 @@ app.directive('customBtn', (el, binding) => {
 })
 
 app.use(router)
+app.use(store)
 
 app.mount('#app')
 // app.component('contract-component', Contract)

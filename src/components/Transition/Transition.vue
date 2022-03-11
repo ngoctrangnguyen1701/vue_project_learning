@@ -48,6 +48,7 @@ export default {
 <style scoped>
 /* Tạo transition */
 /*reference: https://vuejs.org/guide/built-ins/transition.html */
+/* có thể thêm class khi sử dụng thẻ <transition> */
   .fade-enter-active,
   .fade-leave-active {
     transition: opacity 1s ease;

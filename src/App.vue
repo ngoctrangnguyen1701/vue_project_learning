@@ -13,11 +13,12 @@ import Mixin from './components/Mixin/Mixin.vue'
 import Transition from './components/Transition/Transition.vue'
 import VueResource from './components/VueResource/VueResource.vue'
 import VueRouter from './components/VueRouter/VueRouter.vue'
+import Vuex from './components/Vuex/Vuex.vue'
 
 export default {
   data() {
     return {
-      renderComponent: 'VueRouter'
+      renderComponent: 'Vuex'
     }
   },
   components: {
@@ -30,6 +31,7 @@ export default {
     Transition,
     VueResource,
     VueRouter,
+    Vuex,
   }
 }
 </script>
