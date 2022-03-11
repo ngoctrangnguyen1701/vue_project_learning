@@ -23,7 +23,7 @@ app.config.globalProperties.eventBus = eventBus
 //            https://shouts.dev/articles/data-pass-between-components-using-eventbus-in-vue3
 app.component('contract-component', Contract) //--> create global state that can use without import
 
-//------------------DERECTIVE (CHỈ THỊ)------------------
+//------------------DIRECTIVE (CHỈ THỊ)------------------
 //reference: https://learnvue.co/2020/01/creating-your-first-vuejs-custom-directive/#defining-your-directive
 app.directive('bgColor', (el, binding, vnode) => {
   // console.log(el) //--> el ở đây chính là cái element mà sử dụng 'v-highlight'

@@ -39,8 +39,8 @@ export default {
           renderComponent: 'HandlingForm',
         },
         {
-          name: 'Derective',
-          renderComponent: 'Derective',
+          name: 'Directive',
+          renderComponent: 'Directive',
         },
         {
           name: 'Mixin',

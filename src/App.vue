@@ -8,7 +8,7 @@ import HeaderBtn from './HeaderBtn.vue'
 import Lession from './components/Lession/Lession.vue'
 import Exercise from './components/Exercise/Exercise.vue'
 import HandlingForm from './components/HandlingForm/HandlingForm.vue'
-import Derective from './components/Directive/Directive.vue'
+import Directive from './components/Directive/Directive.vue'
 import Mixin from './components/Mixin/Mixin.vue'
 import Transition from './components/Transition/Transition.vue'
 import VueResource from './components/VueResource/VueResource.vue'
@@ -26,7 +26,7 @@ export default {
     Lession,
     Exercise,
     HandlingForm,
-    Derective,
+    Directive,
     Mixin,
     Transition,
     VueResource,

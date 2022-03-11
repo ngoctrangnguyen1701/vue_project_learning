@@ -1,13 +1,13 @@
 <template>
   <div class="mt-3">
-    <p v-bgColor="'#1d34a8'">Derective background color</p>
+    <p v-bgColor="'#1d34a8'">Directive background color</p>
     <!-- thay vì style trực tiếp, dùng cái gọi là directive(chỉ thị) trong Vue để style -->
-    <p v-custom:backgroundColor="'green'">Derective custom with binding argument 'backgroundColor'</p>
-    <p v-custom="'green'">Derective custom no binding any argument</p>
-    <p v-custom:backgroundColor.delay="'red'">Derective custom with modifier</p>
+    <p v-custom:backgroundColor="'green'">Directive custom with binding argument 'backgroundColor'</p>
+    <p v-custom="'green'">Directive custom no binding any argument</p>
+    <p v-custom:backgroundColor.delay="'red'">Directive custom with modifier</p>
     <button
       v-customBtn:style="{backgroundColor: 'skyblue', color: 'black', border: '1px solid red'}"
-    >Derective button</button>
+    >Directive button</button>
     <div v-local-bg>test</div>
   </div>
 </template>
