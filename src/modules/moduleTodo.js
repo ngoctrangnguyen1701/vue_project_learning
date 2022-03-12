@@ -20,12 +20,6 @@ const module = {
       ],
     }
   },
-  mutations: { //mutations (các sự thay đổi)
-    updateCount(state, value) {
-      console.log('updateCount: ', value)
-      state.count += value
-    },
-  },
   getters: {
     doneTodos(state) {
       return state.todos.filter(item => item.done === true)

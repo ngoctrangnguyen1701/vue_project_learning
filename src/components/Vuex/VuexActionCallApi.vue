@@ -1,5 +1,6 @@
 <template>
   <hr>
+  <TestSameStateLoading/>
   <h5 class="d-inline-block me-2">Vuex action call Api</h5>
   <button
     class="btn btn-success"
@@ -40,6 +41,7 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
+import TestSameStateLoading from './TestSameStateLoading.vue'
 
 export default {
   data() {
@@ -82,6 +84,9 @@ export default {
     //   this.$store.dispatch('GET_ALL_PRODUCTS')
     // }
     ...mapActions(['GET_ALL_PRODUCTS', 'DELETE_PRODUCT', 'RETURN_ORIGINAL_PRODUCTS'])
+  },
+  components: {
+    TestSameStateLoading,
   }
 }
 </script>
