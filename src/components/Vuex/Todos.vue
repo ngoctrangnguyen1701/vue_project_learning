@@ -51,13 +51,18 @@ export default {
   // ]),
   computed: {
     ...mapState({
-      todosFromMapState: 'todos'
+      // todosFromMapState: 'todos'
       //có thể đổi tên trong map
     }),
-    ...mapGetters([
-      'doneTodos',
-      'notDoneTodos'
-    ]),
+    // ...mapGetters([
+    //   'doneTodos',
+    //   'notDoneTodos'
+    // ]),
+    ...mapGetters({
+      doneTodos: 'doneTodos',
+      notDoneTodos: 'notDoneTodos',
+      todosFromMapState: 'todos'
+    }),
     todos() {
       // return this.$store.state.todos
       // console.log('filter status');
