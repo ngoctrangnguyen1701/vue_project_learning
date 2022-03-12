@@ -3,18 +3,21 @@
   <Result/>
   <Control/>
   <Todos/>
+  <VuexActionCallApi/>
 </template>
 
 <script>
 import Result from './Result.vue'
 import Control from './Control.vue'
 import Todos from './Todos.vue'
+import VuexActionCallApi from './VuexActionCallApi.vue'
 
 export default {
   components: {
     Result,
     Control,
     Todos,
+    VuexActionCallApi,
   }
 }
 </script>

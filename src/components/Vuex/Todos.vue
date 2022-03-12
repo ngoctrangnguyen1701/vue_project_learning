@@ -1,32 +1,35 @@
 <template>
   <hr>
-  <div class="d-flex my-3">
-    <h3 class="tex-center">Todos</h3>
-    <select class="d-inline-block ms-2" v-model="status">
-      <option value="all">All</option>
-      <option value="done">Done</option>
-      <option value="notDone">Not done</option>
-    </select>
+  <div class="row">
+    <div class="my-3 col-md-6">
+      <h3 class="d-inline-block tex-center">Todos</h3>
+      <select class="ms-2" v-model="status">
+        <option value="all">All</option>
+        <option value="done">Done</option>
+        <option value="notDone">Not done</option>
+      </select>
+      <ul>
+        <li 
+          v-for="(item, index) in todos"
+          :key="index"
+        >{{item.text}}</li>
+      </ul>
+    </div>
+
+    <div class="my-3 col-md-6">
+      <h3 class="d-inline-block tex-center">Get Todo by id</h3>
+      <select class="ms-2" v-model="id">
+        <option
+          v-for="(item, index) in originalTodos"
+          :key="index"
+          :value="item.id"
+        >{{item.id}}</option>
+      </select>
+      <ul class="w-100">
+        <li v-if="getTodoById.text">{{getTodoById.text}}</li>
+      </ul>
+    </div>
   </div>
-  <ul>
-    <li 
-      v-for="(item, index) in todos"
-      :key="index"
-    >{{item.text}}</li>
-  </ul>
-  <div class="d-flex my-3">
-    <h3 class="tex-center">Get Todo by id</h3>
-    <select class="d-inline-block ms-2" v-model="id">
-      <option
-        v-for="(item, index) in originalTodos"
-        :key="index"
-        :value="item.id"
-      >{{item.id}}</option>
-    </select>
-  </div>
-  <ul>
-    <li v-if="getTodoById.text">{{getTodoById.text}}</li>
-  </ul>
 </template>
 
 <script>
